@@ -10,21 +10,19 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        ZStack{
-            ScrollView {
-                VStack (alignment: .center) {
-                    ForEach((1...100), id: \.self) {
-                        Text("\($0)")
-                    }
+        ScrollView {
+            VStack (alignment: .center) {
+                ForEach((1...100), id: \.self) {
+                    Text("\($0)")
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .safeAreaInset(edge: .bottom) {
-                Rectangle()
-                    .fill(.red)
-                    .opacity(0.5)
-                    .frame(height: 50)
-            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .safeAreaInset(edge: .bottom) {
+            Rectangle()
+                .fill(.red)
+                .opacity(0.5)
+                .frame(height: 50)
         }
     }
 }
